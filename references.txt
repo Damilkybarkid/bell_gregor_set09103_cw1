@@ -1,0 +1,6 @@
+https://beginnersbook.com/2015/04/json-tutorial/
+https://jsonlint.com/
+https://codehandbook.org/working-with-json-in-python-flask/ (Use this to implement the json data in the web app.)
+http://gameofthrones.wikia.com/wiki/Brightroar
+http://gameofthrones.wikia.com/wiki/Blackfyre
+https://stackoverflow.com/questions/27539309/how-do-i-create-a-link-to-another-html-page
