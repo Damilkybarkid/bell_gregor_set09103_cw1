@@ -1,0 +1,18 @@
+{"swords": 
+	[
+		{
+		"Name": "Blackfyre",
+		"Material": "Valyrian Steel",
+		"Owner": "House Targaryen",
+		"Status": "Missing"
+		},
+ 
+		{
+		"Name": "Brightroar",
+		"Material": "Valyrian Steel",
+		"Owner": "Tommen II Lannister",
+		"Status": "Missing"
+		}
+	]
+}
+
