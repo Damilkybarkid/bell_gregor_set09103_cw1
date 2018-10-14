@@ -35,6 +35,90 @@ swords = [
 		'material': 'Unknown',
 		'owner': 'House Forrester',
 		'status': 'Unknown (likely in the posession of House Whitehill)'		
+		},
+
+		{
+		'name': 'Hearteater',
+		'material': 'Castle-forged Steel',
+		'owner': 'Joffrey Baratheon',
+		'status': 'Unknown'
+		},
+
+		{
+		'name': 'Heartsbane',
+		'material': 'Valyrian Steel',
+		'owner': 'House Tarly',
+		'status': 'With Samwell Tarly'
+		},
+
+		{
+		'name': 'Ice',
+		'material': 'Valyrian Steel',
+		'owner': 'House Stark (formerly)',
+		'status': 'Melted down and reforged into Oathkeeper and Widow\'s Wail'
+		},
+
+		{
+		'name': 'Lady Forlorn',
+		'material': 'Valyrian Steel',
+		'owner': 'House Corbray',
+		'status': 'With the head of House Corbray'
+		},
+
+		{
+		'name': 'Lightbringer',
+		'material': 'Unknown',
+		'owner': 'Uncertain (Formerly Stannis Baratheon, allegedly Azor Ahai)',
+		'status': 'Uncertain, last seen with Stannis Baratheon at the Battle of Winterfell'
+		},
+
+		{
+		'name': 'Lion\'s Tooth',
+		'material': 'Castle-forged Steel',
+		'owner': 'Joffrey Baratheon',
+		'status': 'Lost in the waters of the Trident'
+		},
+
+		{
+		'name': 'Longclaw',
+		'material': 'Valyrian Steel',
+		'owner': 'Jon Snow',
+		'status': 'With Jon Snow'
+		},
+
+		{
+		'name': 'Needle',
+		'material': 'Castle-forged Steel',
+		'owner': 'Arya Stark',
+		'status': 'With Arya Stark'
+		},
+
+		{
+		'name': 'Oathkeeper',
+		'material': 'Valyrian Steel',
+		'owner': 'Brienne of Tarth',
+		'status': 'With Brienne of Tarth'
+		},
+
+		{
+		'name': 'Two Brothers',
+		'material': 'Wood',
+		'owner': 'Ryon Forrester, Rodrik Forrester',
+		'status': 'At Ironrath'
+		},
+
+		{
+		'name': 'Valyrian Steel Dagger',
+		'material': 'Valyrian Steel',
+		'owner': 'Arya Stark',
+		'status': 'With Arya Stark'
+		},
+
+		{
+		'name': 'Widow\'s Wail',
+		'material': 'Valyrian Steel',
+		'owner': 'Ser Jaime Lannister',
+		'status': 'With Ser Jaime Lannister'
 		}
 	]
 
