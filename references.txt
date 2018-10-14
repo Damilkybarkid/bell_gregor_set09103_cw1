@@ -4,3 +4,11 @@ https://codehandbook.org/working-with-json-in-python-flask/ (Use this to impleme
 http://gameofthrones.wikia.com/wiki/Brightroar
 http://gameofthrones.wikia.com/wiki/Blackfyre
 https://stackoverflow.com/questions/27539309/how-do-i-create-a-link-to-another-html-page
+https://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask
+https://stackoverflow.com/questions/11596777/flask-not-serving-pictures
+https://www.youtube.com/watch?v=UqDwiW1Hf8A
+https://vignette.wikia.nocookie.net/gameofthrones/images/d/db/Blackfyre.png/revision/latest?cb=20150303034006
+https://vignette.wikia.nocookie.net/gameofthrones/images/c/c7/Brightroar.png/revision/latest?cb=20150303013627
+https://vignette.wikia.nocookie.net/gameofthrones/images/e/ed/Dark_Sister.png/revision/latest?cb=20150303032200
+https://vignette.wikia.nocookie.net/gameofthrones/images/d/d1/603_Dawn.png/revision/latest?cb=20160509071921
+https://vignette.wikia.nocookie.net/gameofthrones/images/9/99/Greatssword.png/revision/latest?cb=20170822005929

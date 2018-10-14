@@ -1,4 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 	<p>This is the page detailing the swords featured in Game of Thrones.</p>
-{% endblock %}}
+	
+	{% for sword in swords %}
+		{% if sword_name == sword.name %}
+			<h1>Hello {{ sword.name }}!</h1>
+		{% else %}
+			<div>
+				<a href="http://set09103.napier.ac.uk:9112/swords/{{ sword.name }}/">{{ sword.name }}</a>
+			</div>
+		{% endif %}
+	{% endfor %}
+{% endblock %}
