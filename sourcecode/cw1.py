@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, render_template, jsonify, abort, json, url_for
 app = Flask(__name__)
 
@@ -137,6 +139,10 @@ def swords_list():
 @app.route('/swords/<sword_name>/')
 def sword_details(sword_name):
 	return render_template('sword_details.html', swords=swords, sword_name=sword_name)
+
+@app.route('/material/')
+def material():
+	return render_template('material.html', swords=swords)
 
 if __name__ == ("__main__"):
 	app.run(host='0.0.0.0', debug=True)

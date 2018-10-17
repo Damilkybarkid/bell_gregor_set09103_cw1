@@ -24,3 +24,4 @@ https://vignette.wikia.nocookie.net/gameofthrones/images/6/6d/Oathkeeper.png/rev
 https://vignette.wikia.nocookie.net/gameofthrones/images/2/27/Ryonsword.png/revision/latest?cb=20160701123842
 https://vignette.wikia.nocookie.net/gameofthrones/images/4/45/Dagger.png/revision/latest?cb=20110625112043
 https://vignette.wikia.nocookie.net/gameofthrones/images/f/f9/Joffrey_holding_Widow%27s_Wail.png/revision/latest?cb=20140417214109
+https://stackoverflow.com/questions/14104728/not-able-to-print-statements-with-apostrophe-in-it-in-python-invalid-syntax-e
