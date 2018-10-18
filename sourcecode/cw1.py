@@ -1,128 +1,8 @@
-import os
-
-from flask import Flask, render_template, jsonify, abort, json, url_for
+from flask import Flask, render_template, jsonify, abort, json, url_for, request
 app = Flask(__name__)
 
-swords = [
-		{
-		'name':'Blackfyre',
-		'material': 'Valyrian Steel',
-		'owner': 'House Targaryen',
-		'status': 'Missing'
-		},
-
-		{
-		'name': 'Brightroar',
-		'material': 'Valyrian Steel',
-		'owner': 'Tommen II Lannister',
-		'status': 'Missing'
-		},
-
-		{
-		'name': 'Dark Sister',
-		'material': 'Valyrian Steel',
-		'owner': 'Visenya Targaryen, Daemon Targaryen, Aemon Targaryen, Brynden Rivers',
-		'status': 'Missing'
-		},
-
-		{
-		'name': 'Dawn',
-		'material': '"Fallen Star" Metal',
-		'owner': '"The Sword of the Morning" (House Dayne)',
-		'status': 'Returned to Starfall by Eddard Stark'
-		},
-		
-		{
-		'name': 'Forrester Greatsword',
-		'material': 'Unknown',
-		'owner': 'House Forrester',
-		'status': 'Unknown (likely in the posession of House Whitehill)'		
-		},
-
-		{
-		'name': 'Hearteater',
-		'material': 'Castle-forged Steel',
-		'owner': 'Joffrey Baratheon',
-		'status': 'Unknown'
-		},
-
-		{
-		'name': 'Heartsbane',
-		'material': 'Valyrian Steel',
-		'owner': 'House Tarly',
-		'status': 'With Samwell Tarly'
-		},
-
-		{
-		'name': 'Ice',
-		'material': 'Valyrian Steel',
-		'owner': 'House Stark (formerly)',
-		'status': 'Melted down and reforged into Oathkeeper and Widow\'s Wail'
-		},
-
-		{
-		'name': 'Lady Forlorn',
-		'material': 'Valyrian Steel',
-		'owner': 'House Corbray',
-		'status': 'With the head of House Corbray'
-		},
-
-		{
-		'name': 'Lightbringer',
-		'material': 'Unknown',
-		'owner': 'Uncertain (Formerly Stannis Baratheon, allegedly Azor Ahai)',
-		'status': 'Uncertain, last seen with Stannis Baratheon at the Battle of Winterfell'
-		},
-
-		{
-		'name': 'Lion\'s Tooth',
-		'material': 'Castle-forged Steel',
-		'owner': 'Joffrey Baratheon',
-		'status': 'Lost in the waters of the Trident'
-		},
-
-		{
-		'name': 'Longclaw',
-		'material': 'Valyrian Steel',
-		'owner': 'Jon Snow',
-		'status': 'With Jon Snow'
-		},
-
-		{
-		'name': 'Needle',
-		'material': 'Castle-forged Steel',
-		'owner': 'Arya Stark',
-		'status': 'With Arya Stark'
-		},
-
-		{
-		'name': 'Oathkeeper',
-		'material': 'Valyrian Steel',
-		'owner': 'Brienne of Tarth',
-		'status': 'With Brienne of Tarth'
-		},
-
-		{
-		'name': 'Two Brothers',
-		'material': 'Wood',
-		'owner': 'Ryon Forrester, Rodrik Forrester',
-		'status': 'At Ironrath'
-		},
-
-		{
-		'name': 'Valyrian Steel Dagger',
-		'material': 'Valyrian Steel',
-		'owner': 'Arya Stark',
-		'status': 'With Arya Stark'
-		},
-
-		{
-		'name': 'Widow\'s Wail',
-		'material': 'Valyrian Steel',
-		'owner': 'Ser Jaime Lannister',
-		'status': 'With Ser Jaime Lannister'
-		}
-	]
+with open('static/data/swords.json') as swords_json:
+	swords = json.load(swords_json)
 
 @app.route('/')
 def root():
@@ -140,9 +20,49 @@ def swords_list():
 def sword_details(sword_name):
 	return render_template('sword_details.html', swords=swords, sword_name=sword_name)
 
-@app.route('/material/')
-def material():
-	return render_template('material.html', swords=swords)
+@app.route('/upload/', methods=['POST','GET'])
+def upload():
+	if request.method == 'POST':
+		print request.form
+		name = request.form['name']
+		material = request.form['material']
+		owner = request.form['owner']
+		status = request.form['status']
+
+		sword = {
+			"name" : name,
+			"material" : material,
+			"owner" : owner,
+			"status" : status
+			}
+		
+		swords.append(sword)
+		
+		with open('static/data/swords.json', 'a') as swords_json:
+			json.dump(sword, swords_json)
+		
+		return jsonify(swords)
+
+	else:
+		page ='''
+			<html>
+				<body>
+					<form action ="" method="post" name="form">
+						<label for="name">Name:</label>
+						<input type="text" name="name" id="name"/>
+						<label for="material">Material:</label>
+						<input type="text" name="material" id="material"/>
+						<label for="owner">Owner:</label>
+						<input type="text" name="owner" id="owner"/>
+						<label for="status">Status:/>
+						<input type="text" name="status" id="status"/>
+						<input type="submit" name="submit" id="submit"/>
+					</form>
+				</body>
+			</html>
+		'''
+
+	return page
 
 if __name__ == ("__main__"):
 	app.run(host='0.0.0.0', debug=True)

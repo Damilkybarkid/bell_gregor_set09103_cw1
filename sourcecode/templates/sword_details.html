@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 	{% for sword in swords %}
-		{% if sword_name == sword.name %}
-			<h1>{{ sword.name }}</h1>
+		{% if sword_name == sword["name"] %}
+			<h1>{{ sword["name"] }}</h1>
 			<div>
 				<ul>
-					<li><p>Material: {{ sword.material }}</p></li>
-					<li><p>Owner: {{ sword.owner }}</p></li>
-					<li><p>Status: {{ sword.status }}</p></li>
+					<li><p>Material: {{ sword["material"] }}</p></li>
+					<li><p>Owner: {{ sword["owner"] }}</p></li>
+					<li><p>Status: {{ sword["status"] }}</p></li>
 				</ul>
 			</div>
 			<div>
-			<img src="/static/images/{{ sword.name }}.png" alt="{{ sword.name }}">
+			<img src="/static/images/{{ sword["name"] }}.png" alt="{{ sword["name"] }}">
 			</div>
 		{% endif %}
 	{% endfor %}
