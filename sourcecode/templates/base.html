@@ -1,44 +1,42 @@
 <html>
 <head>
-	<title>Bootstrap Demonstration</title>
+	{% block title  %} {% endblock %}
 	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" />
-	<style>
-		body{
-			padding-top:50px; 
-		}
-	</style>
+	<link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet" />
+
+	<link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 </head>
 <body>
-
-	<nav class ="navbar navbar-inverse navbar-fixed-top">
-	<div class="container">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed"
-			data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-			aria-controls="navbar">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="{{ url_for('root') }}">Game of Thrones: Blades</a>
+	<nav class ="navbar navbar-inverse navbar-fixed-top container">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+				aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="{{ url_for('root') }}"><img style="max-width:300px; margin-top: -30px; margin-left: 10px;" src="/static/images/game-of-thrones-logo-2.png"></a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="{{ url_for('root') }}">Home</a></li>
+					<li><a href="{{ url_for('swords_list') }}">Swords</a></li>
+					<li><a href="{{ url_for('materials') }}">Materials</a></li>
+					<li><a href="{{ url_for('upload') }}">Upload</a></li>
+				</ul>
+			</div>
 		</div>
-		<div id="navbar" class="collapse navbar-collapse">
-		<ul class="nav navbar-nav">
-			<li class="active"><a href="{{ url_for('root') }}">Home</a></li>
-			<li><a href="{{ url_for('swords_list') }}">Swords</a></li>
-			<li><a href="{{ url_for('daggers') }}">Daggers</a></li>
-		</ul>
+	</nav>
+			
+	<div class="container">
+		<div class="content">
+			{% block content %} {% endblock %}
 		</div>
 	</div>
-	</nav>
-
-	{% block content %} {% endblock %}
-<!--	<div class="container">
-		<h1>HELLO</h1>
-		<h2>Napier</h2>
-		<p>Demonstrating a flask app with templates for html generation and bootstrap for a little bit of style</p>
-	</div> --!>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>

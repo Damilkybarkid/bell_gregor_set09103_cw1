@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+	<form action ="" method="post" name="form" enctype="multipart/form-data">
+		<label for="name">Name:</label>
+		<input type="text" name="name" id="name"/>
+		<label for="material">Material:</label>
+		<input type="text" name="material" id="material"/>
+		<label for="owner">Owner:</label>
+		<input type="text" name="owner" id="owner"/>
+		<label for="status">Status:</label>
+		<input type="text" name="status" id="status"/>
+		<input type="file" name="datafile" />
+		<input type="submit" name="submit" id="submit"/>
+	</form>		
+{% endblock %}

@@ -1,10 +1,15 @@
 {% extends "base.html" %}
+
+{% block title %}
+	<title>Swords</title>
+{% endblock %}
+
 {% block content %}
-	<p>This is the page detailing the swords featured in Game of Thrones.</p>
+	<h1 class="text-center">List of Swords</h1>
 	
 	{% for sword in swords %}
 		<div>
-			<a href="http://set09103.napier.ac.uk:9112/swords/{{ sword["name"] }}/">{{ sword["name"] }}</a>
+			<a href="http://set09103.napier.ac.uk:9112/swords/{{ sword["name"] }}/"><h3 class="text-center">{{ sword["name"] }}</h3></a>
 		</div>
 	{% endfor %}
 {% endblock %}

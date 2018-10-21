@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+	{% for sword in swords %}
+		{% if material_name == sword["material"] %}
+			<title>{{ sword["material"] }} Swords</title>
+		{% endif %}
+	{% endfor %}
+{% endblock %}
+
+{% block content %}
+	<h1 class="text-center">List of Swords Forged With {{ material_name }}</h1>
+	{% for sword in swords %}
+		{% if material_name == sword["material"] %}
+			<a href="http://set09103.napier.ac.uk:9112/swords/{{ sword["name"] }}/"><h3 class="text-center">{{ sword["name"] }}</h3></a>
+		{% endif %}
+	{% endfor %}
+{% endblock %}

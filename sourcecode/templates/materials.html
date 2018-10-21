@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}
+	<title>Materials</title>
+{% endblock %}
+
+{% block content %}
+	<h1 class="text-center">List of Materials</h1>
+	
+	{% for material in material_names_distinct %}
+		<div>
+			<a href="http://set09103.napier.ac.uk:9112/materials/{{ material }}/"><h3 class="text-center">{{ material }}</h3></a>
+		</div>
+	{% endfor %}
+{% endblock %}
