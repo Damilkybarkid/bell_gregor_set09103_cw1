@@ -4,6 +4,11 @@ app = Flask(__name__)
 with open('static/data/swords.json') as swords_json:
 	swords = json.load(swords_json)
 
+with open('static/data/blades.json') as blades_json:
+	blades_loaded_json = json.load(blades_json)
+	blades = blades_loaded_json["swords"]
+	
+
 @app.route('/')
 def root():
 	return redirect(url_for('home'))
@@ -11,6 +16,10 @@ def root():
 @app.route('/home/')
 def home():
 	return render_template('home.html'), 200
+
+@app.route('/test/', methods=['GET'])
+def test():
+	return jsonify(blades)
 
 @app.route('/swords/', methods=['GET'])
 def swords_list():
@@ -68,13 +77,22 @@ def upload():
 		
 		swords.append(sword)
 		
-		with open('static/data/swords.json', 'a') as swords_json:
-			json.dump(sword, swords_json)
+		with open('static/data/swords.json', 'w') as swords_json:
+			json.dump(swords, swords_json)
 		
-		return redirect(url_for('swords'))
+		return jsonify(swords)
 
 	else:
 		return render_template('upload.html')
+
+@app.route('/delete/<sword_name>/', methods=['DELETE','GET'])
+def delete(sword_name):
+	for sword in swords:
+		if sword_name == sword["name"]:
+			swords.remove(sword)
+	with open('static/data/swords.json', 'w') as swords_json:
+		json.dump(swords, swords_json)
+	return jsonify(swords)
 
 @app.errorhandler(404)
 def page_not_found(error):
