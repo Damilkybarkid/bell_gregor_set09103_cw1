@@ -1,15 +1,23 @@
 {% extends "base.html" %}
+
+{% block title %}
+	<title>Upload a Custom Sword</title>
+{% endblock %}
+
 {% block content %}
-	<form action ="" method="post" name="form" enctype="multipart/form-data">
-		<label for="name">Name:</label>
-		<input type="text" name="name" id="name"/>
-		<label for="material">Material:</label>
-		<input type="text" name="material" id="material"/>
-		<label for="owner">Owner:</label>
-		<input type="text" name="owner" id="owner"/>
-		<label for="status">Status:</label>
-		<input type="text" name="status" id="status"/>
-		<input type="file" name="datafile" />
-		<input type="submit" name="submit" id="submit"/>
-	</form>		
+	<h1 class="text-center">Upload a Custom Sword</h1>
+	<div class="text-center">
+		<form action ="" method="post" name="form" enctype="multipart/form-data">
+			<label for="name">Name:</label>
+			<input type="text" name="name" id="name"/>
+			<label for="material">Material:</label>
+			<input type="text" name="material" id="material"/>
+			<label for="owner">Owner:</label>
+			<input type="text" name="owner" id="owner"/>
+			<label for="status">Status:</label>
+			<input type="text" name="status" id="status"/>
+			<br><label class="text-center" for="file">Image Upload (PNG files only):<input type="file" name="datafile" /></label></br>
+			<input type="submit" name="submit" id="submit"/>
+		</form>	
+	</div>	
 {% endblock %}

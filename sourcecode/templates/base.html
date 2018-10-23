@@ -6,6 +6,7 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+	<link href="{{ url_for('static', filename='images/stark-icon.png') }}" rel="shortcut icon" type="image/png"/>
 </head>
 <body>
 	<nav class ="navbar navbar-inverse navbar-fixed-top container">
@@ -26,7 +27,9 @@
 					<li class="active"><a href="{{ url_for('root') }}">Home</a></li>
 					<li><a href="{{ url_for('swords_list') }}">Swords</a></li>
 					<li><a href="{{ url_for('materials') }}">Materials</a></li>
+					<li><a href="{{ url_for('owners') }}">Owners</a></li>
 					<li><a href="{{ url_for('upload') }}">Upload</a></li>
+					<li><a href="{{ url_for('delete') }}">Delete</a></li>
 				</ul>
 			</div>
 		</div>

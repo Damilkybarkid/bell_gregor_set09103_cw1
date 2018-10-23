@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+	{% for sword in swords %}
+		{% if owner_name == sword["owner"] %}
+			<title>Swords owned by: {{ sword["owner"] }}</title>
+		{% endif %}
+	{% endfor %}
+{% endblock %}
+
+{% block content %}
+	<h1 class="text-center">List of Swords Owned by {{ owner_name }}</h1>
+	{% for sword in swords %}
+		{% if owner_name == sword["owner"] %}
+			<a href="http://set09103.napier.ac.uk:9112/swords/{{ sword["name"] }}/"><h3 class="text-center">{{ sword["name"] }}</h3></a>
+		{% endif %}
+	{% endfor %}
+{% endblock %}

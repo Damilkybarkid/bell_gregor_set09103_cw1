@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}
+	<title>Owners</title>
+{% endblock %}
+
+{% block content %}
+	<h1 class="text-center">List of Owners</h1>
+	
+	{% for owner in owner_names_distinct %}
+		<div>
+			<a href="http://set09103.napier.ac.uk:9112/owners/{{ owner }}/"><h3 class="text-center">{{ owner }}</h3></a>
+		</div>
+	{% endfor %}
+{% endblock %}

@@ -7,7 +7,7 @@
 {% block content %}
 	<h1 class="text-center">List of Swords</h1>
 	
-	{% for sword in swords %}
+	{% for sword in swords|sort(attribute='name') %}
 		<div>
 			<a href="http://set09103.napier.ac.uk:9112/swords/{{ sword["name"] }}/"><h3 class="text-center">{{ sword["name"] }}</h3></a>
 		</div>

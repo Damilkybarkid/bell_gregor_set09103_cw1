@@ -12,15 +12,13 @@
 	{% for sword in swords %}
 		{% if sword_name == sword["name"] %}
 			<h1 class="text-center">{{ sword["name"] }}</h1>
-			<div class="sword-text">
-				<ul>
-					<li><p><b>Material:</b> {{ sword["material"] }}</p></li>
-					<li><p><b>Owner:</b> {{ sword["owner"] }}</p></li>
-					<li><p><b>Status:</b> {{ sword["status"] }}</p></li>
-				</ul>
+			<div class="text-center">
+				<img class="sword-image" src="/static/images/{{ sword["name"] }}.png" alt="{{ sword["name"] }}">
 			</div>
-			<div class="text-right sword-image-div">
-			<img class="sword-image" src="/static/images/{{ sword["name"] }}.png" alt="{{ sword["name"] }}">
+			<div class="text-center sword-text">
+				<p><b>Material:</b> {{ sword["material"] }}</p>
+				<p><b>Owner:</b> {{ sword["owner"] }}</p>
+				<p><b>Status:</b> {{ sword["status"] }}</p>
 			</div>
 		{% endif %}
 	{% endfor %}

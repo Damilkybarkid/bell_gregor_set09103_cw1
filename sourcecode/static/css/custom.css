@@ -15,22 +15,14 @@ body{
 	margin-right: 15px;
 }
 
-.sword-image-div{
-	display: inline-block;
-	width: 100%;
-	margin-top: -100px;
-}
-
 .sword-image{
-	margin-right: 50px;
 	height: 300px;
 	overflow: hidden;
+	margin-top: 25px;
 }
 
 .sword-text{
-	display: inline-block;
-	margin-top: 100px;
-	margin-left: 50px;
+	margin-top: 25px;
 }
 h1,h2,h3,h4,h5,h6 {
 	font-family: 'Arvo', Georgia, Times, serif;
